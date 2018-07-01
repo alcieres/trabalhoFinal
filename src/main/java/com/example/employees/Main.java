@@ -1,21 +1,19 @@
-/* Copyright ? 2015 Oracle and/or its affiliates. All rights reserved. */
+/* Copyright © 2015 Oracle and/or its affiliates. All rights reserved. */
 package com.example.employees;
 
-import java.util.Optional;
-
 import org.apache.catalina.startup.Tomcat;
+//Import the Optional class
 
 public class Main {
     
-    public static final Optional<String> PORT = Optional.ofNullable(System.getenv("PORT"));
-    public static final Optional<String> HOSTNAME = Optional.ofNullable(System.getenv("HOSTNAME"));
+    public static final Optional<String> PORT = Optional.ofNullable(System.getenv("8081"));
+    //Create a PORT instance variable
     
     public static void main(String[] args) throws Exception {
         String contextPath = "/" ;
         String appBase = ".";
-        Tomcat tomcat = new Tomcat();   
-        tomcat.setPort(Integer.valueOf(PORT.orElse("8081") ));
-        tomcat.setHostname(HOSTNAME.orElse("localhost"));
+        Tomcat tomcat = new Tomcat();  
+        //Use this PORT variable to set the port on Tomcat instance     
         tomcat.getHost().setAppBase(appBase);
         tomcat.addWebapp(contextPath, appBase);
         tomcat.start();
