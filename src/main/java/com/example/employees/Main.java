@@ -6,7 +6,7 @@ import org.apache.catalina.startup.Tomcat;
 
 public class Main {
     
-    public static final Optional<String> PORT = Optional.ofNullable(System.getenv("8081"));
+    public static final Optional<String> PORT = Optional.ofNullable(System.getenv("PORT"));
     //Create a PORT instance variable
     
     public static void main(String[] args) throws Exception {
