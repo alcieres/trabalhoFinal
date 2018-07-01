@@ -80,7 +80,7 @@
                     <finalName>employees-app-${project.version}</finalName>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.employees.Main</mainClass>
+                            <mainClass>com.example.employees.EmployeeList</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
