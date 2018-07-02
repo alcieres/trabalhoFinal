@@ -70,37 +70,25 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <finalName>employees-app-${project.version}</finalName>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.employees.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
                 <executions>
-           <execution>
-               <id>jar-with-dependencies</id>
-               <phase>package</phase>
-               <goals>
-                   <goal>single</goal>
-               </goals>
-               <configuration>
-                   <descriptorRefs>
-                       <descriptorRef>jar-with-dependencies</descriptorRef>
-                   </descriptorRefs>
-                   <archive>
-                       <manifest>
-                           <mainClass>com.example.employees.Main</mainClass>
-                       </manifest>
-                   </archive>
-               </configuration>
-           </execution>
-           <execution>
-               <id>dist</id>
-               <phase>package</phase>
-               <goals>
-                   <goal>single</goal>
-               </goals>
-               <configuration>
-                   <descriptors>
-                       <descriptor>src/assembly/distribution.xml</descriptor>
-                   </descriptors>
-               </configuration>
-           </execution>
-       </executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
