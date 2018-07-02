@@ -16,6 +16,7 @@ public class Employee {
     private String role;
     private String department;
     private String email;
+    private String dtAdmin;
     private static final AtomicLong counter = new AtomicLong(100);
 
     public Employee(String name, String lastName, String birthDate, String role, String department, String email, long id) {
@@ -36,6 +37,14 @@ public class Employee {
         this.department = department;
         this.email = email;     
         this.id = counter.incrementAndGet();
+    }
+
+    public String getdtAdmin() {
+        return dtAdmin;
+    }
+
+    public void setdtAdmin(String dtAdmin) {
+        this.dtAdmin = dtAdmin;
     }
 
     public long getId() {
